@@ -200,10 +200,17 @@
     "@nrwl/angular:library": {
       "style": "scss",
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "buildable": true,
+      "enableIvy": true
     },
     "@nrwl/angular:component": {
       "style": "scss"
+    },
+    "@schematics/angular": {
+      "component": {
+        "changeDetection": "OnPush"
+      }
     }
   },
   "defaultProject": "first-client"
