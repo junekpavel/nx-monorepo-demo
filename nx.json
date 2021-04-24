@@ -12,8 +12,8 @@
     }
   },
   "projects": {
-    "first-client": { "tags": [] },
-    "second-client": { "tags": [] },
-    "shared-ui-buttons": { "tags": [] }
+    "first-client": { "tags": ["scope:first-client"] },
+    "second-client": { "tags": ["scope:second-client"] },
+    "shared-ui-buttons": { "tags": ["scope:shared", "type:ui"] }
   }
 }
