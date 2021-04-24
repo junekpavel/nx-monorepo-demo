@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 1,
   "projects": {
     "first-client": {
       "projectType": "application",
@@ -189,7 +189,7 @@
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
-  "generators": {
+  "schematics": {
     "@nrwl/angular:application": {
       "style": "scss",
       "linter": "eslint",
