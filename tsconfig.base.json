@@ -17,6 +17,9 @@
     "paths": {
       "@nx-monorepo-demo/shared/ui/buttons": [
         "libs/shared/ui/buttons/src/index.ts"
+      ],
+      "@nx-monorepo-demo/shared/segments/errors/shell": [
+        "libs/shared/segments/errors/shell/src/index.ts"
       ]
     }
   },

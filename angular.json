@@ -213,6 +213,43 @@
           }
         }
       }
+    },
+    "shared-segments-errors-shell": {
+      "projectType": "library",
+      "root": "libs/shared/segments/errors/shell",
+      "sourceRoot": "libs/shared/segments/errors/shell/src",
+      "prefix": "nx-monorepo-demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/shared/segments/errors/shell/tsconfig.lib.json",
+            "project": "libs/shared/segments/errors/shell/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/segments/errors/shell/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/segments/errors/shell/src/**/*.ts",
+              "libs/shared/segments/errors/shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/segments/errors/shell"],
+          "options": {
+            "jestConfig": "libs/shared/segments/errors/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

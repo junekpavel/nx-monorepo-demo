@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/first-client',
     '<rootDir>/apps/second-client',
     '<rootDir>/libs/shared/ui/buttons',
+    '<rootDir>/libs/shared/segments/errors/shell',
   ],
 };
