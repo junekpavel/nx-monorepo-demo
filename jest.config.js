@@ -1,3 +1,7 @@
 module.exports = {
-  projects: ['<rootDir>/apps/first-client', '<rootDir>/apps/second-client'],
+  projects: [
+    '<rootDir>/apps/first-client',
+    '<rootDir>/apps/second-client',
+    '<rootDir>/libs/shared/ui/buttons',
+  ],
 };

@@ -13,6 +13,7 @@
   },
   "projects": {
     "first-client": { "tags": [] },
-    "second-client": { "tags": [] }
+    "second-client": { "tags": [] },
+    "shared-ui-buttons": { "tags": [] }
   }
 }
