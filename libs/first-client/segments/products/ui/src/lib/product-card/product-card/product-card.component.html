@@ -1,0 +1,6 @@
+<article *ngIf='product'>
+  <h1>{{ product.name }}</h1>
+  <p>{{ product.description }}</p>
+  <div><strong>{{ product.priceEur | currency: 'EUR' }}</strong></div>
+  <nx-monorepo-demo-button name="Detail" [routerLink]="['product', product.id]"></nx-monorepo-demo-button>
+</article>
