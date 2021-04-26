@@ -20,6 +20,9 @@
       ],
       "@nx-monorepo-demo/shared/segments/errors/shell": [
         "libs/shared/segments/errors/shell/src/index.ts"
+      ],
+      "@nx-monorepo-demo/first-client/segments/products/util": [
+        "libs/first-client/segments/products/util/src/index.ts"
       ]
     }
   },

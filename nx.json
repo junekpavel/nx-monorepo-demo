@@ -15,6 +15,7 @@
     "first-client": { "tags": ["scope:first-client"] },
     "second-client": { "tags": ["scope:second-client"] },
     "shared-ui-buttons": { "tags": ["scope:shared", "type:ui"] },
-    "shared-segments-errors-shell": { "tags": ["scope:shared", "type:feature"] }
+    "shared-segments-errors-shell": { "tags": ["scope:shared", "type:feature"] },
+    "first-client-segments-products-util": { "tags": ["scope:first-client", "type:util"] }
   }
 }
