@@ -21,6 +21,9 @@
     "first-client-segments-products-util": {
       "tags": ["scope:first-client", "type:util"]
     },
-    "first-client-segments-products-ui": { "tags": ["scope:first-client", "type:ui"] }
+    "first-client-segments-products-ui": {
+      "tags": ["scope:first-client", "type:ui"]
+    },
+    "first-client-segments-products-data-access": { "tags": ["scope:first-client", "type:data-access"] }
   }
 }

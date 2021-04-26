@@ -26,6 +26,9 @@
       ],
       "@nx-monorepo-demo/first-client/segments/products/ui": [
         "libs/first-client/segments/products/ui/src/index.ts"
+      ],
+      "@nx-monorepo-demo/first-client/segments/products/data-access": [
+        "libs/first-client/segments/products/data-access/src/index.ts"
       ]
     }
   },

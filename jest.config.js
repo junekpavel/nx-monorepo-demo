@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/shared/segments/errors/shell',
     '<rootDir>/libs/first-client/segments/products/util',
     '<rootDir>/libs/first-client/segments/products/ui',
+    '<rootDir>/libs/first-client/segments/products/data-access',
   ],
 };

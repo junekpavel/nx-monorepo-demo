@@ -324,6 +324,45 @@
           }
         }
       }
+    },
+    "first-client-segments-products-data-access": {
+      "projectType": "library",
+      "root": "libs/first-client/segments/products/data-access",
+      "sourceRoot": "libs/first-client/segments/products/data-access/src",
+      "prefix": "nx-monorepo-demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/first-client/segments/products/data-access/tsconfig.lib.json",
+            "project": "libs/first-client/segments/products/data-access/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/first-client/segments/products/data-access/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/first-client/segments/products/data-access/src/**/*.ts",
+              "libs/first-client/segments/products/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/first-client/segments/products/data-access"
+          ],
+          "options": {
+            "jestConfig": "libs/first-client/segments/products/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
