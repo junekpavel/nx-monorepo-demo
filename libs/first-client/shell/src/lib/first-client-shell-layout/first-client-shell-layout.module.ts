@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FirstClientShellLayoutComponent } from './first-client-shell-layout/first-client-shell-layout.component';
 import { RouterModule } from '@angular/router';
+import { UiSidebarModule } from '@nx-monorepo-demo/shared/ui/sidebar';
 
 
 
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    UiSidebarModule,
   ]
 })
 export class FirstClientShellLayoutModule { }

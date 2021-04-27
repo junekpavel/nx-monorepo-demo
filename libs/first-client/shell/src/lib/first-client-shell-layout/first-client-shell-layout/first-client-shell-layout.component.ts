@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { UiSidebarItem } from '@nx-monorepo-demo/shared/ui/sidebar';
 
 @Component({
   selector: 'nx-monorepo-demo-first-client-shell-layout',
@@ -7,5 +8,16 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FirstClientShellLayoutComponent {
+
+  readonly sidebarItems: UiSidebarItem[] = [
+    {
+      name: 'Home',
+      link: '/',
+    },
+    {
+      name: 'Products',
+      link: '/products',
+    },
+  ];
 
 }

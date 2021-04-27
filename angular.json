@@ -477,6 +477,43 @@
           }
         }
       }
+    },
+    "shared-ui-sidebar": {
+      "projectType": "library",
+      "root": "libs/shared/ui/sidebar",
+      "sourceRoot": "libs/shared/ui/sidebar/src",
+      "prefix": "nx-monorepo-demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/shared/ui/sidebar/tsconfig.lib.json",
+            "project": "libs/shared/ui/sidebar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/sidebar/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/sidebar/src/**/*.ts",
+              "libs/shared/ui/sidebar/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/sidebar"],
+          "options": {
+            "jestConfig": "libs/shared/ui/sidebar/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
