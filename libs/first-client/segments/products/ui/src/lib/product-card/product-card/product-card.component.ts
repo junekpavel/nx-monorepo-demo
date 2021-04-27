@@ -10,5 +10,6 @@ import { Product } from '@nx-monorepo-demo/first-client/segments/products/util';
 export class ProductCardComponent {
 
   @Input() product?: Product;
+  @Input() productDetailLink?: string;
 
 }

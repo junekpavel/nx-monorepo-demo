@@ -32,6 +32,9 @@
       ],
       "@nx-monorepo-demo/first-client/shell": [
         "libs/first-client/shell/src/index.ts"
+      ],
+      "@nx-monorepo-demo/first-client/segments/products/shell": [
+        "libs/first-client/segments/products/shell/src/index.ts"
       ]
     }
   },

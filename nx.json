@@ -27,6 +27,7 @@
     "first-client-segments-products-data-access": {
       "tags": ["scope:first-client", "type:data-access"]
     },
-    "first-client-shell": { "tags": ["scope:first-client", "type:feature"] }
+    "first-client-shell": { "tags": ["scope:first-client", "type:feature"] },
+    "first-client-segments-products-shell": { "tags": ["scope:first-client", "type:feature"] }
   }
 }

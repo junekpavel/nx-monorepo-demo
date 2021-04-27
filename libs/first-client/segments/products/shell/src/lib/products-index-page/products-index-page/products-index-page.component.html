@@ -1,0 +1,14 @@
+<ng-container *ngIf="(products$ | async) !== null; else loadingTpl">
+  <ng-container *ngIf="(products$ | async); let products">
+    <strong *ngIf='products?.length === 0'>There are no products yet :(</strong>
+    <nx-monorepo-demo-product-card
+      *ngFor="let product of products$ | async"
+      [product]="product"
+      productDetailLink="{{ product.id }}"
+    ></nx-monorepo-demo-product-card>
+  </ng-container>
+</ng-container>
+
+<ng-template #loadingTpl>
+  Loading...
+</ng-template>

@@ -400,6 +400,43 @@
           }
         }
       }
+    },
+    "first-client-segments-products-shell": {
+      "projectType": "library",
+      "root": "libs/first-client/segments/products/shell",
+      "sourceRoot": "libs/first-client/segments/products/shell/src",
+      "prefix": "nx-monorepo-demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/first-client/segments/products/shell/tsconfig.lib.json",
+            "project": "libs/first-client/segments/products/shell/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/first-client/segments/products/shell/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/first-client/segments/products/shell/src/**/*.ts",
+              "libs/first-client/segments/products/shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/first-client/segments/products/shell"],
+          "options": {
+            "jestConfig": "libs/first-client/segments/products/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
