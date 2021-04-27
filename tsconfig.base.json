@@ -35,7 +35,8 @@
       ],
       "@nx-monorepo-demo/first-client/segments/products/shell": [
         "libs/first-client/segments/products/shell/src/index.ts"
-      ]
+      ],
+      "@nx-monorepo-demo/shared/ui/theme": ["libs/shared/ui/theme/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

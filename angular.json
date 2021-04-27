@@ -21,6 +21,9 @@
               "apps/first-client/src/assets"
             ],
             "styles": ["apps/first-client/src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/ui/theme/styles"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -433,6 +436,43 @@
           "outputs": ["coverage/libs/first-client/segments/products/shell"],
           "options": {
             "jestConfig": "libs/first-client/segments/products/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-ui-theme": {
+      "projectType": "library",
+      "root": "libs/shared/ui/theme",
+      "sourceRoot": "libs/shared/ui/theme/src",
+      "prefix": "nx-monorepo-demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/shared/ui/theme/tsconfig.lib.json",
+            "project": "libs/shared/ui/theme/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/theme/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/theme/src/**/*.ts",
+              "libs/shared/ui/theme/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/theme"],
+          "options": {
+            "jestConfig": "libs/shared/ui/theme/jest.config.js",
             "passWithNoTests": true
           }
         }

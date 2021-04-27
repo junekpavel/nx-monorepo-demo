@@ -9,5 +9,6 @@ module.exports = {
     '<rootDir>/libs/first-client/segments/products/data-access',
     '<rootDir>/libs/first-client/shell',
     '<rootDir>/libs/first-client/segments/products/shell',
+    '<rootDir>/libs/shared/ui/theme',
   ],
 };
