@@ -11,5 +11,6 @@ module.exports = {
     '<rootDir>/libs/first-client/segments/products/shell',
     '<rootDir>/libs/shared/ui/theme',
     '<rootDir>/libs/shared/ui/sidebar',
+    '<rootDir>/libs/second-client/shell',
   ],
 };

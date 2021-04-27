@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('@nx-monorepo-demo/shared/segments/errors/shell').then(mod => mod.SharedSegmentsErrorsShellModule),
   },
   {
+    path: '',
+    loadChildren: () => import('@nx-monorepo-demo/second-client/shell').then(mod => mod.SecondClientShellModule),
+  },
+  {
     path: '**',
     redirectTo: 'error/not-found'
   }

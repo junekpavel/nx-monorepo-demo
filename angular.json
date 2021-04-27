@@ -112,6 +112,9 @@
               "apps/second-client/src/assets"
             ],
             "styles": ["apps/second-client/src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/ui/theme/styles"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -510,6 +513,43 @@
           "outputs": ["coverage/libs/shared/ui/sidebar"],
           "options": {
             "jestConfig": "libs/shared/ui/sidebar/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "second-client-shell": {
+      "projectType": "library",
+      "root": "libs/second-client/shell",
+      "sourceRoot": "libs/second-client/shell/src",
+      "prefix": "nx-monorepo-demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/second-client/shell/tsconfig.lib.json",
+            "project": "libs/second-client/shell/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/second-client/shell/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/second-client/shell/src/**/*.ts",
+              "libs/second-client/shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/second-client/shell"],
+          "options": {
+            "jestConfig": "libs/second-client/shell/jest.config.js",
             "passWithNoTests": true
           }
         }

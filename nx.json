@@ -32,6 +32,7 @@
       "tags": ["scope:first-client", "type:feature"]
     },
     "shared-ui-theme": { "tags": ["scope:shared", "type:ui"] },
-    "shared-ui-sidebar": { "tags": ["scope:shared", "type:ui"] }
+    "shared-ui-sidebar": { "tags": ["scope:shared", "type:ui"] },
+    "second-client-shell": { "tags": ["scope:second-client", "type:feature"] }
   }
 }
