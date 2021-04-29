@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "unused-imports", "import"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -12,13 +12,37 @@
             "enforceBuildableLibDependency": true,
             "allow": [],
             "depConstraints": [
-              { "sourceTag": "scope:first-client", "onlyDependOnLibsWithTags": ["scope:first-client", "scope:shared"] },
-              { "sourceTag": "scope:second-client", "onlyDependOnLibsWithTags": ["scope:second-client", "scope:shared"] },
-              { "sourceTag": "scope:shared", "onlyDependOnLibsWithTags": ["scope:shared"] },
+              {
+                "sourceTag": "scope:first-client",
+                "onlyDependOnLibsWithTags": [
+                  "scope:first-client",
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "scope:second-client",
+                "onlyDependOnLibsWithTags": [
+                  "scope:second-client",
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
 
-              { "sourceTag": "type:util", "onlyDependOnLibsWithTags": ["type:util"] },
-              { "sourceTag": "type:ui", "onlyDependOnLibsWithTags": ["type:util", "type:ui"] },
-              { "sourceTag": "type:data-access", "onlyDependOnLibsWithTags": ["type:util", "type:data-access"] }
+              {
+                "sourceTag": "type:util",
+                "onlyDependOnLibsWithTags": ["type:util"]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:util", "type:ui"]
+              },
+              {
+                "sourceTag": "type:data-access",
+                "onlyDependOnLibsWithTags": ["type:util", "type:data-access"]
+              }
             ]
           }
         ]
@@ -27,7 +51,63 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "rules": {
+        "unused-imports/no-unused-imports": "error",
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              "rxjs/Rx",
+              // Disallow imports from barrel files inside libraries
+              ".",
+              "..",
+              "../..",
+              "../../..",
+              "../../../..",
+              "../../../../..",
+              "../../../../../..",
+              "../../../../../../..",
+              "../../../../../../../.."
+            ],
+            // Disallow imports from barrel files inside libraries
+            "patterns": ["public-api", "index"]
+          }
+        ],
+        "import/no-self-import": "error",
+        "import/no-useless-path-segments": "error",
+        "import/no-cycle": "error",
+        "import/no-relative-parent-imports": "error",
+        "import/no-duplicates": "error",
+        "import/newline-after-import": "error",
+        "import/first": "error",
+        "import/order": [
+          "error",
+          {
+            "pathGroups": [
+              {
+                "pattern": "@angular/**",
+                "group": "external",
+                "position": "before"
+              },
+              {
+                "pattern": "@nx-monorepo-demo/**",
+                "group": "external",
+                "position": "before"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["builtin"],
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "index"
+            ],
+            "newlines-between": "never"
+          }
+        ]
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
