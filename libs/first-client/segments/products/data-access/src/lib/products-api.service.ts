@@ -1,34 +1,38 @@
 import { Injectable } from '@angular/core';
 import { ProductsDataAccessModule } from './products-data-access.module';
-import { getMockProducts, Product } from '@nx-monorepo-demo/first-client/segments/products/util';
-import { defer, Observable, of, throwError } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { Product } from '@nx-monorepo-demo/first-client/segments/products/util';
+import { Observable, of, throwError } from 'rxjs';
+import { delay, mergeMap, pluck } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: ProductsDataAccessModule,
 })
 export class ProductsApiService {
 
-  private readonly mockedProducts: Product[] = getMockProducts(20);
+  constructor(
+    private readonly httpClient: HttpClient,
+  ) { }
 
   getAll(): Observable<Product[]> {
-    return of(this.mockedProducts)
+    return this.httpClient.get<{data: Product[]}>('https://run.mocky.io/v3/b8af30ea-4916-476a-b665-cdf35a965874')
       .pipe(
-        delay(1000),
+        pluck('data'),
+        delay(500),
       );
   }
 
   getSingle(id: number): Observable<Product> {
-    return defer(() => {
-      const product = this.mockedProducts[id];
-      if (product) {
-        return of(product);
-      }
-      return throwError('Product not found.');
-    })
+    return this.getAll()
       .pipe(
-        delay(1000),
-      )
+        mergeMap(products => {
+          const product = products.find(p => p.id === id);
+          if (product) {
+            return of(product);
+          }
+          return throwError('Product not found.');
+        }),
+      );
   }
 
 }
