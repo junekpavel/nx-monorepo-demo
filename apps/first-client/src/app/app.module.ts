@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
-import { PRODUCTS_RESOURCE_CONFIGURATION } from '@nx-monorepo-demo/first-client/segments/products/util';
-import { ProductsResourceConfiguration } from '@nx-monorepo-demo/first-client/segments/products/util';
-import { environment } from '../environments/environment';
-
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from "@angular/common/http";
+import {
+  PRODUCTS_RESOURCE_CONFIGURATION,
+  ProductsResourceConfiguration,
+} from "@nx-monorepo-demo/first-client/segments/products/util";
+import { environment } from "../environments/environment";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 
 const productsResourceConfiguration: ProductsResourceConfiguration = {
   productsApiResourceUrl: environment.productsApiUrl,
@@ -14,13 +15,12 @@ const productsResourceConfiguration: ProductsResourceConfiguration = {
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [
-    {provide: PRODUCTS_RESOURCE_CONFIGURATION, useValue: productsResourceConfiguration},
+    {
+      provide: PRODUCTS_RESOURCE_CONFIGURATION,
+      useValue: productsResourceConfiguration,
+    },
   ],
   bootstrap: [AppComponent],
 })
